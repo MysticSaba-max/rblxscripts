@@ -1,5 +1,5 @@
 --[[
-    Farm, Boss & Rebirth
+    +1 DMG Per Revive
     Interface: WindUI (pinned version 1.6.66). If WindUI fails to load,
     a small native interface takes over (Right Ctrl to hide, configurable).
 
@@ -871,7 +871,7 @@ end
 -- ========================================================
 local function buildWindUI(WindUI)
     local Window = WindUI:CreateWindow({
-        Title = "Farm, Boss & Rebirth",
+        Title = "+1 DMG Per Revive",
         Icon = "swords",
         Author = "Auto farm",
         Folder = "FarmBossRebirth",
@@ -1005,7 +1005,7 @@ local function buildNativeUI()
 
     local top = make("TextLabel", {
         Size = UDim2.new(1, 0, 0, 34), BackgroundColor3 = C.bar, BorderSizePixel = 0,
-        Text = "   Farm, Boss & Rebirth", TextColor3 = C.text,
+        Text = "   +1 DMG Per Revive", TextColor3 = C.text,
         Font = Enum.Font.GothamBold, TextSize = 13, TextXAlignment = Enum.TextXAlignment.Left, Parent = main,
     })
     round(top, 10)
@@ -1695,4 +1695,4 @@ task.spawn(function()
     end
 end)
 
-notify("Farm, Boss & Rebirth", "Loaded. Right Ctrl to show / hide the menu.")
+notify("+1 DMG Per Revive", "Loaded. Right Ctrl to show / hide the menu.")
