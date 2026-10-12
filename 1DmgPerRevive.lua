@@ -1,5 +1,6 @@
 --[[
     +1 DMG Per Revive
+    Made with Claude Opus 5.5. Expect bugs!!
     Interface: WindUI (pinned version 1.6.66). If WindUI fails to load,
     a small native interface takes over (Right Ctrl to hide, configurable).
 
@@ -873,7 +874,7 @@ local function buildWindUI(WindUI)
     local Window = WindUI:CreateWindow({
         Title = "+1 DMG Per Revive",
         Icon = "swords",
-        Author = "Auto farm",
+        Author = "Made with Claude Opus 5.5. Expect bugs!!",
         Folder = "FarmBossRebirth",
         Size = UDim2.fromOffset(580, 460),
         Theme = "Dark",
