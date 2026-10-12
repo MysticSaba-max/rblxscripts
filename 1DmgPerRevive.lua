@@ -951,6 +951,10 @@ local function buildWindUI(WindUI)
                 end,
             }
         end
+        -- Empty gap (7 px per unit): keeps the last card of a tab from being cut at the bottom
+        function g.space(units)
+            safe("Space", { Columns = units })
+        end
         return g
     end
 
@@ -1201,6 +1205,12 @@ local function buildNativeUI()
                 TextXAlignment = Enum.TextXAlignment.Left, TextYAlignment = Enum.TextYAlignment.Top, Parent = f,
             })
             return { setDesc = function(text) body.Text = text end }
+        end
+        function g.space(units)
+            make("Frame", {
+                Size = UDim2.new(1, -6, 0, 7 * units), BackgroundTransparency = 1,
+                LayoutOrder = nextOrder(), Parent = page,
+            })
         end
         return g
     end
@@ -1461,6 +1471,11 @@ settingsTab.button({
     title = "Stop the script", desc = "Stops all loops and closes the interface",
     callback = function() env.__FarmBossRebirthStop() end,
 })
+
+-- Bottom margin on every tab: without it the last card is cut by the window edge
+for _, tab in ipairs({ farmTab, bossTab, rebirthTab, settingsTab }) do
+    tab.space(4)
+end
 
 UI.selectFirst()
 
